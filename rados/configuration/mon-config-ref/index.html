@@ -9,8 +9,8 @@
     
     <title>监视器配置参考 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../" />
     <link rel="up" title="配置" href="../" />
     <link rel="next" title="监视器与 OSD 交互的配置" href="../mon-osd-interaction/" />
@@ -67,7 +67,7 @@
 <p>监视器们维护着集群运行图的“主副本”，就是说客户端连到一个监视器并获取当前运行图就能确定所有监视器、 OSD 和元数据服务器的位置。 Ceph 客户端读写 OSD 或元数据服务器前，必须先连到一个监视器，靠当前集群运行图的副本和 CRUSH 算法，客户端能计算出任何对象的位置，故此客户端有能力直接连到 OSD ，这对 Ceph 的高伸缩性、高性能来说非常重要。更多信息见<a class="reference external" href="../../../architecture#scalability-and-high-availability">伸缩性和高可用性</a>。</p>
 <p>监视器的主要角色是维护集群运行图的主副本，它也提供认证和日志记录服务。 Ceph 监视器们把监视器服务的所有更改写入一个单独的 Paxos 例程，然后 Paxos 以键/值方式存储所有变更以实现高度一致性。同步期间， Ceph 监视器能查询集群运行图的近期版本，它们通过操作键/值存储快照和迭代器（用 leveldb ）来进行存储级同步。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-ae8fc6ae5b4014f064a0bed424507a7a247cd113.png"/>
+<img src="../../../images/ditaa-ae8fc6ae5b4014f064a0bed424507a7a247cd113.png"/>
 </p>
 <p class="deprecated">
 <span class="versionmodified">Deprecated since version 0.58: </span>版</p>
@@ -213,7 +213,7 @@
 <p>在测试集群时，一个常见场景是：系统管理员从集群删除一个 OSD 、接着观察重均衡；然后继续删除其他 OSD ，直到集群达到占满率并锁死。我们建议，即使在测试集群里也要规划一点空闲容量用于保证高可用性。理想情况下，要做好这样的预案：一系列 OSD 失败后，短时间内不更换它们仍能恢复到 <tt class="docutils literal"><span class="pre">active</span> <span class="pre">+</span> <span class="pre">clean</span></tt> 状态。你也可以在 <tt class="docutils literal"><span class="pre">active</span> <span class="pre">+</span> <span class="pre">degraded</span></tt> 状态运行集群，但对正常使用来说并不好。</p>
 <p>下图描述了一个简化的 Ceph 集群，它包含 33 个节点、每主机一个 OSD 、每 OSD 3TB 容量，所以这个小白鼠集群有 99TB 的实际容量，其 <tt class="docutils literal"><span class="pre">mon</span> <span class="pre">osd</span> <span class="pre">full</span> <span class="pre">ratio</span></tt> 为 <tt class="docutils literal"><span class="pre">.95</span></tt> 。如果它只剩余 5TB 容量，集群就不允许客户端再读写数据，所以它的运行容量是 95TB ，而非 99TB 。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-28056cd20c19e97a7617494fbc1cf0d761fb9da5.png"/>
+<img src="../../../images/ditaa-28056cd20c19e97a7617494fbc1cf0d761fb9da5.png"/>
 </p>
 <p>在这样的集群里，坏一或两个 OSD 很平常；一种罕见但可能发生的情形是一个机架的路由器或电源挂了，这会导致多个 OSD 同时离线（如 OSD 7-12 ），在这种情况下，你仍要力争保持集群可运行并达到 <tt class="docutils literal"><span class="pre">active</span> <span class="pre">+</span> <span class="pre">clean</span></tt> 状态，即使这意味着你得在短期内额外增加一些 OSD 及主机。如果集群利用率太高，在解决故障域期间也许不会丢数据，但很可能牺牲数据可用性，因为利用率超过了 full ratio 。故此，我们建议至少要粗略地规划下容量。</p>
 <p>找出你集群的两个数字：</p>
@@ -273,7 +273,7 @@
 </ol>
 <p>有了这些角色区分， leader就 可以给 provider 委派同步任务，这会避免同步请求压垮 leader 、影响性能。在下面的图示中， requester 已经知道它落后于其它监视器，然后向 leader 请求同步， leader 让它去和 provider 同步。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-215fab4d12b3f0727a4fbc633b58887918820ca9.png"/>
+<img src="../../../images/ditaa-215fab4d12b3f0727a4fbc633b58887918820ca9.png"/>
 </p>
 <p>新监视器加入集群时有必要进行同步。在运行中，监视器会不定时收到集群运行图的更新，这就意味着 leader 和 provider 角色可能在监视器间变幻。如果这事发生在同步期间（如 provider 落后于 leader ）， provider 能终结和 requester 间的同步。</p>
 <p>一旦同步完成， Ceph 需要修复整个集群，使归置组回到 <tt class="docutils literal"><span class="pre">active</span> <span class="pre">+</span> <span class="pre">clean</span></tt> 状态。</p>
@@ -811,7 +811,7 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../">
-              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../">Table Of Contents</a></h3>
 <ul class="current">

@@ -9,8 +9,8 @@
     
     <title>快照 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="up" title="Ceph 块设备" href="../rbd/" />
     <link rel="next" title="QEMU 与块设备" href="../qemu-rbd/" />
@@ -70,7 +70,7 @@
 <p class="last"><strong>先停止 I/O 操作</strong>再拍映像的快照，如果映像内包含文件系统，拍快照<strong>前</strong>确保文件系统是一致的。</p>
 </div>
 <p class="ditaa">
-<img src="../../_images/ditaa-75fdb48a3db2bad6ef749fdae1282f4ae2dd1f7c.png"/>
+<img src="../../images/ditaa-75fdb48a3db2bad6ef749fdae1282f4ae2dd1f7c.png"/>
 </p>
 <div class="section" id="cephx">
 <h2>Cephx 注意事项<a class="headerlink" href="#cephx" title="Permalink to this headline">¶</a></h2>
@@ -148,7 +148,7 @@ rbd --name client.admin --keyring=/etc/ceph/ceph.keyring [commands]</pre>
 <span id="id8"></span><h2>分层<a class="headerlink" href="#index-1" title="Permalink to this headline">¶</a></h2>
 <p>Ceph 支持创建某一设备快照的很多写时复制（ COW ）克隆。分层快照使得 Ceph 块设备客户端可以很快地创建映像。例如，你可以创建一个块设备映像，其中有 Linux VM ；然后拍快照、保护快照，再创建任意多写时复制克隆。快照是只读的，所以简化了克隆快照的语义——使得克隆很迅速。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-b4c8b30123e5581e44b87f1836b96a869c4898b6.png"/>
+<img src="../../images/ditaa-b4c8b30123e5581e44b87f1836b96a869c4898b6.png"/>
 </p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -164,7 +164,7 @@ rbd --name client.admin --keyring=/etc/ceph/ceph.keyring [commands]</pre>
 <h3>分层入门<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Ceph 块设备的分层是个简单的过程。你必须有个映像、必须为它创建快照、必须保护快照，执行过这些步骤后，你才能克隆快照。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-bbd86247e30fd4ca83550176ab1bf5a39ab46c6d.png"/>
+<img src="../../images/ditaa-bbd86247e30fd4ca83550176ab1bf5a39ab46c6d.png"/>
 </p>
 <p>克隆出的映像包含到父快照的引用、也包含存储池 ID 、映像 ID 和快照 ID 。包含存储池 ID 意味着你可以把一存储池内的快照克隆到别的存储池。</p>
 <ol class="arabic simple">
@@ -241,7 +241,7 @@ rbd --name client.admin --keyring=/etc/ceph/ceph.keyring [commands]</pre>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

@@ -9,8 +9,8 @@
     
     <title>Ceph 块设备 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="next" title="块设备命令" href="../rados-rbd-cmds/" />
     <link rel="prev" title="灾难恢复" href="../../cephfs/disaster-recovery/" />
@@ -61,7 +61,7 @@
 <p id="index-0">块是一个字节序列（例如，一个 512 字节的一块数据），基于块的存储接口是最常见的存储数据方法，它们基于旋转媒体，像硬盘、 CD 、软盘、甚至传统的 9 磁道磁带。无处不在的块设备接口使虚拟块设备成为与 Ceph 这样的海量存储系统交互的理想之选。</p>
 <p>Ceph 块设备是瘦接口、大小可调且数据条带化到集群内的多个 OSD 。 Ceph 块设备均衡多个 <abbr title="Reliable Autonomic Distributed Object Store">RADOS</abbr> 能力，如快照、复制和一致性， Ceph 的 <abbr title="Reliable Autonomic Distributed Object Store">RADOS</abbr> 块设备（ RBD ）用内核模块或 librbd 库与 OSD 交互。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-dc9f80d771b55f2daa5cbbfdb2dd0d3e6dfc17c0.png"/>
+<img src="../../images/ditaa-dc9f80d771b55f2daa5cbbfdb2dd0d3e6dfc17c0.png"/>
 </p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -102,7 +102,7 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

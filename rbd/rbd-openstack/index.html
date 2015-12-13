@@ -9,8 +9,8 @@
     
     <title>块设备与 OpenStack &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="up" title="Ceph 块设备" href="../rbd/" />
     <link rel="next" title="块设备与 CloudStack" href="../rbd-cloudstack/" />
@@ -63,7 +63,7 @@
 <p id="index-0">通过 <tt class="docutils literal"><span class="pre">libvirt</span></tt> 你可以把 Ceph 块设备用于 OpenStack ，它配置了 QEMU 到 <tt class="docutils literal"><span class="pre">librbd</span></tt> 的接口。 Ceph 把块设备分块为对象并分布到集群中，这意味着大个的 Ceph 块设备映像其性能会比独立服务器更好。</p>
 <p>要把 Ceph 块设备用于 OpenStack ，必须先安装 QEMU 、 <tt class="docutils literal"><span class="pre">libvirt</span></tt> 和 OpenStack 。我们建议用一台独立的物理主机安装 OpenStack ，此主机最少需 8GB 内存和一个 4 核 CPU 。下面的图表描述了 OpenStack/Ceph 技术栈。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-e4a4957f90e4d8ebac2608e1544c34bf784cfdfb.png"/>
+<img src="../../images/ditaa-e4a4957f90e4d8ebac2608e1544c34bf784cfdfb.png"/>
 </p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -306,9 +306,9 @@ available in branches based on upstream Nova <a class="reference external" href=
 <a class="reference external" href="https://github.com/angdraug/nova/tree/rbd-ephemeral-clone-stable-icehouse">stable/icehouse</a>. Using them is not mandatory but <strong>highly recommended</strong> in
 order to take advantage of the copy-on-write clone functionality.</p>
 <p>On every Compute node, edit <tt class="docutils literal"><span class="pre">/etc/nova/nova.conf</span></tt> and add:</p>
-<div class="highlight-python"><pre>libvirt_images_type = rbd
-libvirt_images_rbd_pool = vms
-libvirt_images_rbd_ceph_conf = /etc/ceph/ceph.conf
+<div class="highlight-python"><pre>libvirtimages_type = rbd
+libvirtimages_rbd_pool = vms
+libvirtimages_rbd_ceph_conf = /etc/ceph/ceph.conf
 libvirt_disk_cachemodes="network=writeback"
 rbd_user = cinder
 rbd_secret_uuid = 457eb676-33da-42ec-9a8c-9293d545c337</pre>
@@ -413,7 +413,7 @@ qemu-img convert -f qcow2 -O raw precise-cloudimg.img precise-cloudimg.raw</pre>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

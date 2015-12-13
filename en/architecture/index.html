@@ -9,8 +9,8 @@
     
     <title>Architecture &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <script type="text/javascript" src="http://ayni.ceph.com/public/js/ceph.js"></script>
 
@@ -58,7 +58,7 @@ clients accessing petabytes to exabytes of data. A <a class="reference internal"
 commodity hardware and intelligent daemons, and a <a class="reference internal" href="../../glossary/#term-ceph-storage-cluster"><em class="xref std std-term">Ceph Storage Cluster</em></a>
 accommodates large numbers of nodes, which communicate with each other to
 replicate and redistribute data dynamically.</p>
-<img alt="../../_images/stack1.png" src="../../_images/stack1.png" />
+<img alt="../../images/stack1.png" src="../../images/stack1.png" />
 <div class="section" id="the-ceph-storage-cluster">
 <h2>The Ceph Storage Cluster<a class="headerlink" href="#the-ceph-storage-cluster" title="Permalink to this headline">¶</a></h2>
 <p>Ceph provides an infinitely scalable <a class="reference internal" href="../../glossary/#term-ceph-storage-cluster"><em class="xref std std-term">Ceph Storage Cluster</em></a> based upon
@@ -71,7 +71,7 @@ Storage Clusters</a>.</p>
 <li><a class="reference internal" href="../../glossary/#term-ceph-osd-daemon"><em class="xref std std-term">Ceph OSD Daemon</em></a></li>
 </ul>
 <p class="ditaa">
-<img src="../../_images/ditaa-4cf6d0983521ea66cd16f98b7ce624e6666eed77.png"/>
+<img src="../../images/ditaa-4cf6d0983521ea66cd16f98b7ce624e6666eed77.png"/>
 </p>
 <p>A Ceph Monitor maintains a master copy of the cluster map. A cluster of Ceph
 monitors ensures high availability should a monitor daemon fail. Storage cluster
@@ -92,7 +92,7 @@ comes through a <a class="reference internal" href="../../glossary/#term-ceph-bl
 file in a filesystem, which is stored on an <a class="reference internal" href="../../glossary/#term-object-storage-device"><em class="xref std std-term">Object Storage Device</em></a>. Ceph
 OSD Daemons handle the read/write operations on the storage disks.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-518f1eba573055135eb2f6568f8b69b4bb56b4c8.png"/>
+<img src="../../images/ditaa-518f1eba573055135eb2f6568f8b69b4bb56b4c8.png"/>
 </p>
 <p>Ceph OSD Daemons store all data as objects in a flat namespace (e.g., no
 hierarchy of directories). An object has an identifier, binary data, and
@@ -101,7 +101,7 @@ up to <a class="reference internal" href="../../glossary/#term-ceph-clients"><em
 attributes such as the file owner, created date, last modified date, and so
 forth.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-ae8b394e1d31afd181408bab946ca4a216ca44b7.png"/>
+<img src="../../images/ditaa-ae8b394e1d31afd181408bab946ca4a216ca44b7.png"/>
 </p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -231,7 +231,7 @@ the client and the monitor share a secret key.</p>
 secret key to the user in a secure manner.</p>
 </div>
 <p class="ditaa">
-<img src="../../_images/ditaa-6b1dafb6d8f177ab2beb3325857f1e98e4593ec6.png"/>
+<img src="../../images/ditaa-6b1dafb6d8f177ab2beb3325857f1e98e4593ec6.png"/>
 </p>
 <p>To authenticate with the monitor, the client passes in the user name to the
 monitor, and the monitor generates a session key and encrypts it with the secret
@@ -244,14 +244,14 @@ user&#8217;s secret key and transmits it back to the client. The client decrypts
 ticket and uses it to sign requests to OSDs and metadata servers throughout the
 cluster.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-56e3a72e085f9070289331d64453b84ab1e9510b.png"/>
+<img src="../../images/ditaa-56e3a72e085f9070289331d64453b84ab1e9510b.png"/>
 </p>
 <p>The <tt class="docutils literal"><span class="pre">cephx</span></tt> protocol authenticates ongoing communications between the client
 machine and the Ceph servers. Each message sent between a client and server,
 subsequent to the initial authentication, is signed using a ticket that the
 monitors, OSDs and metadata servers can verify with their shared secret.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-f97566f2e17ba6de07951872d259d25ae061027f.png"/>
+<img src="../../images/ditaa-f97566f2e17ba6de07951872d259d25ae061027f.png"/>
 </p>
 <p>The protection offered by this authentication is between the Ceph client and the
 Ceph server hosts. The authentication is not extended beyond the Ceph client. If
@@ -322,7 +322,7 @@ client once it has confirmed the object was stored successfully.</p>
 </li>
 </ol>
 <p class="ditaa">
-<img src="../../_images/ditaa-54719cc959473e68a317f6578f9a2f0f3a8345ee.png"/>
+<img src="../../images/ditaa-54719cc959473e68a317f6578f9a2f0f3a8345ee.png"/>
 </p>
 <p>With the ability to perform data replication, Ceph OSD Daemons relieve Ceph
 clients from that duty, while ensuring high data availability and data safety.</p>
@@ -344,7 +344,7 @@ partitions for storing objects.</p>
 pools. The pool&#8217;s <tt class="docutils literal"><span class="pre">size</span></tt> or number of replicas, the CRUSH ruleset and the
 number of placement groups determine how Ceph will place the data.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-65961c2ab9771b66c8c73e6d5fd648b0ea83c2da.png"/>
+<img src="../../images/ditaa-65961c2ab9771b66c8c73e6d5fd648b0ea83c2da.png"/>
 </p>
 <p>Pools set at least the following parameters:</p>
 <ul class="simple">
@@ -370,7 +370,7 @@ rebalance dynamically when new Ceph OSD Daemons and the underlying OSD devices
 come online. The following diagram depicts how CRUSH maps objects to placement
 groups, and placement groups to OSDs.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-c7fd5a4042a21364a7bef1c09e6b019deb4e4feb.png"/>
+<img src="../../images/ditaa-c7fd5a4042a21364a7bef1c09e6b019deb4e4feb.png"/>
 </p>
 <p>With a copy of the cluster map and the CRUSH algorithm, the client can compute
 exactly which OSD to use when reading or writing a particular object.</p>
@@ -459,7 +459,7 @@ stable. Many of the placement groups remain in their original configuration,
 and each OSD gets some added capacity, so there are no load spikes on the
 new OSD after rebalancing is complete.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-b31e1f646135b9706000fa0799d572563dffac81.png"/>
+<img src="../../images/ditaa-b31e1f646135b9706000fa0799d572563dffac81.png"/>
 </p>
 </div>
 <div class="section" id="data-consistency">
@@ -496,7 +496,7 @@ and is stored as an attribute of the object (<tt class="docutils literal"><span 
 name. Chunk 1 contains <tt class="docutils literal"><span class="pre">ABC</span></tt> and is stored on <strong>OSD5</strong> while chunk 4 contains
 <tt class="docutils literal"><span class="pre">YXY</span></tt> and is stored on <strong>OSD3</strong>.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-96fe8c3c73e5e54cf27fa8a4d64ed08d17679ba3.png"/>
+<img src="../../images/ditaa-96fe8c3c73e5e54cf27fa8a4d64ed08d17679ba3.png"/>
 </p>
 <p>When the object <strong>NYAN</strong> is read from the erasure coded pool, the decoding
 function reads three chunks: chunk 1 containing <tt class="docutils literal"><span class="pre">ABC</span></tt>, chunk 3 containing
@@ -507,7 +507,7 @@ because the <strong>OSD4</strong> is out. The decoding function can be called as
 three chunks are read: <strong>OSD2</strong> was the slowest and its chunk was not taken into
 account.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-1f3acf28921568db86bb22bb748cbf42c9db7059.png"/>
+<img src="../../images/ditaa-1f3acf28921568db86bb22bb748cbf42c9db7059.png"/>
 </p>
 </div>
 <div class="section" id="interrupted-full-writes">
@@ -525,7 +525,7 @@ authoritative version of the placement group logs.</p>
 placement group logs on each OSD are identical (i.e. <tt class="docutils literal"><span class="pre">1,1</span></tt> for epoch 1,
 version 1).</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-a60e808835cf8860e19b9f2a9c83691c2a4f0218.png"/>
+<img src="../../images/ditaa-a60e808835cf8860e19b9f2a9c83691c2a4f0218.png"/>
 </p>
 <p><strong>OSD 1</strong> is the primary and receives a <strong>WRITE FULL</strong> from a client, which
 means the payload is to replace the object entirely instead of overwriting a
@@ -543,18 +543,18 @@ Because the OSDs work asynchronously, some chunks may still be in flight ( such
 as <tt class="docutils literal"><span class="pre">D2v2</span></tt> ) while others are acknowledged and on disk ( such as <tt class="docutils literal"><span class="pre">C1v1</span></tt> and
 <tt class="docutils literal"><span class="pre">D1v1</span></tt>).</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-513e0558c5877884d43ffc9e7b792a5f77466831.png"/>
+<img src="../../images/ditaa-513e0558c5877884d43ffc9e7b792a5f77466831.png"/>
 </p>
 <p>If all goes well, the chunks are acknowledged on each OSD in the acting set and
 the logs&#8217; <tt class="docutils literal"><span class="pre">last_complete</span></tt> pointer can move from <tt class="docutils literal"><span class="pre">1,1</span></tt> to <tt class="docutils literal"><span class="pre">1,2</span></tt>.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-8db474f2d1f9a795067c4aef26c0530072cfa77f.png"/>
+<img src="../../images/ditaa-8db474f2d1f9a795067c4aef26c0530072cfa77f.png"/>
 </p>
 <p>Finally, the files used to store the chunks of the previous version of the
 object can be removed: <tt class="docutils literal"><span class="pre">D1v1</span></tt> on <strong>OSD 1</strong>, <tt class="docutils literal"><span class="pre">D2v1</span></tt> on <strong>OSD 2</strong> and <tt class="docutils literal"><span class="pre">C1v1</span></tt>
 on <strong>OSD 3</strong>.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-8459c4da0494dcbcd61e3348a59fb42fb696b014.png"/>
+<img src="../../images/ditaa-8459c4da0494dcbcd61e3348a59fb42fb696b014.png"/>
 </p>
 <p>But accidents happen. If <strong>OSD 1</strong> goes down while <tt class="docutils literal"><span class="pre">D2v2</span></tt> is still in flight,
 the object&#8217;s version 2 is partially written: <strong>OSD 3</strong> has one chunk but that is
@@ -565,7 +565,7 @@ the <tt class="docutils literal"><span class="pre">last_complete</span></tt> log
 to be available on all OSDs in the previous acting set ) is <tt class="docutils literal"><span class="pre">1,1</span></tt> and that
 will be the head of the new authoritative log.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-e211bf856cdbbf5d055980e95d39a4b60113c954.png"/>
+<img src="../../images/ditaa-e211bf856cdbbf5d055980e95d39a4b60113c954.png"/>
 </p>
 <p>The log entry 1,2 found on <strong>OSD 3</strong> is divergent from the new authoritative log
 provided by <strong>OSD 4</strong>: it is discarded and the file containing the <tt class="docutils literal"><span class="pre">C1v2</span></tt>
@@ -573,7 +573,7 @@ chunk is removed. The <tt class="docutils literal"><span class="pre">D1v1</span>
 the erasure coding library during scrubbing and stored on the new primary
 <strong>OSD 4</strong>.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-77b8a9b262ce5e9cbd7030c5da9ed7ab0edffc8a.png"/>
+<img src="../../images/ditaa-77b8a9b262ce5e9cbd7030c5da9ed7ab0edffc8a.png"/>
 </p>
 <p>See <a class="reference external" href="https://github.com/ceph/ceph/blob/40059e12af88267d0da67d8fd8d9cd81244d8f93/doc/dev/osd_internals/erasure_coding/developer_notes.rst">Erasure Code Notes</a> for additional details.</p>
 </div>
@@ -590,7 +590,7 @@ agent determines when to flush objects from the cache to the backing storage
 tier. So the cache tier and the backing storage tier are completely transparent
 to Ceph clients.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-2982c5ed3031cac4f9e40545139e51fdb0b33897.png"/>
+<img src="../../images/ditaa-2982c5ed3031cac4f9e40545139e51fdb0b33897.png"/>
 </p>
 <p>See <a class="reference external" href="../rados/operations/cache-tiering">Cache Tiering</a> for additional details.</p>
 </div>
@@ -637,7 +637,7 @@ Cluster. Ceph packages this functionality into the <tt class="docutils literal">
 you can create your own custom Ceph Clients. The following diagram depicts the
 basic architecture.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-1a91351293f441ce0238c21f2c432331a0f5a9d3.png"/>
+<img src="../../images/ditaa-1a91351293f441ce0238c21f2c432331a0f5a9d3.png"/>
 </p>
 <div class="section" id="native-protocol-and-librados">
 <h3>Native Protocol and <tt class="docutils literal"><span class="pre">librados</span></tt><a class="headerlink" href="#native-protocol-and-librados" title="Permalink to this headline">¶</a></h3>
@@ -666,7 +666,7 @@ all watchers and receive notification when the watchers receive the
 notification. This enables a client to use any object a
 synchronization/communication channel.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-afd50e13a81128d0a2c38fadcd27dfc8b7ac523b.png"/>
+<img src="../../images/ditaa-afd50e13a81128d0a2c38fadcd27dfc8b7ac523b.png"/>
 </p>
 </div>
 <div class="section" id="data-striping">
@@ -699,7 +699,7 @@ take maximum advantage of Ceph&#8217;s ability to distribute data across placeme
 groups, and consequently doesn&#8217;t improve performance very much. The following
 diagram depicts the simplest form of striping:</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-deb861a26cf89e008006b63d95885b4ed88ba608.png"/>
+<img src="../../images/ditaa-deb861a26cf89e008006b63d95885b4ed88ba608.png"/>
 </p>
 <p>If you anticipate large images sizes, large S3 or Swift objects (e.g., video),
 or large CephFS directories, you may see considerable read/write performance
@@ -729,7 +729,7 @@ set (<tt class="docutils literal"><span class="pre">object</span> <span class="p
 stripe (<tt class="docutils literal"><span class="pre">stripe</span> <span class="pre">unit</span> <span class="pre">16</span></tt>) in the first object in the new object set (<tt class="docutils literal"><span class="pre">object</span>
 <span class="pre">4</span></tt> in the diagram below).</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-92220e0223f86eb33cfcaed4241c6680226c5ce2.png"/>
+<img src="../../images/ditaa-92220e0223f86eb33cfcaed4241c6680226c5ce2.png"/>
 </p>
 <p>Three important variables determine how Ceph stripes data:</p>
 <ul class="simple">
@@ -787,7 +787,7 @@ a filesytem in user space (FUSE).</li>
 and high availability. The following diagram depicts the high-level
 architecture.</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-a116a4a81d0472ef44d503c262528e6c1ea9d547.png"/>
+<img src="../../images/ditaa-a116a4a81d0472ef44d503c262528e6c1ea9d547.png"/>
 </p>
 <div class="section" id="ceph-object-storage">
 <span id="index-17"></span><h3>Ceph Object Storage<a class="headerlink" href="#ceph-object-storage" title="Permalink to this headline">¶</a></h3>
@@ -841,7 +841,7 @@ Ceph FS files get mapped to objects that Ceph stores in the Ceph Storage
 Cluster. Ceph Clients mount a CephFS filesystem as a kernel object or as
 a Filesystem in User Space (FUSE).</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-1cae553f9d207d72257429d572673632afbd108c.png"/>
+<img src="../../images/ditaa-1cae553f9d207d72257429d572673632afbd108c.png"/>
 </p>
 <p>The Ceph Filesystem service includes the Ceph Metadata Server (MDS) deployed
 with the Ceph Storage cluster. The purpose of the MDS is to store all the
@@ -881,7 +881,7 @@ instance for high availability.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul>

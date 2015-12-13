@@ -9,8 +9,8 @@
     
     <title>Ceph 对象网关 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../" />
     <link rel="next" title="安装 Ceph 对象网关" href="../install/install-ceph-gateway/" />
     <link rel="prev" title="Librbd 的 Python 接口" href="../rbd/librbdpy/" />
@@ -65,7 +65,7 @@
 </ol>
 <p>Ceph 对象存储使用 Ceph 对象网关守护进程（ <tt class="docutils literal"><span class="pre">radosgw</span></tt> ），它是个与 Ceph 存储集群交互的 FastCGI 模块。因为它提供了与 OpenStack Swift 和 Amazon S3 兼容的接口， RADOS 要有它自己的用户管理。 Ceph 对象网关可与 Ceph FS 客户端或 Ceph 块设备客户端共用一个存储集群。 S3 和 Swift API 共用一个通用命名空间，所以你可以用一个 API 写、然后用另一个检出。</p>
 <p class="ditaa">
-<img src="../_images/ditaa-50d12451eb76c5c72c4574b08f0320b39a42e5f1.png"/>
+<img src="../images/ditaa-50d12451eb76c5c72c4574b08f0320b39a42e5f1.png"/>
 </p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -97,7 +97,7 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../">
-              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../">Table Of Contents</a></h3>
 <ul class="current">

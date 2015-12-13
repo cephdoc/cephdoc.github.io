@@ -9,8 +9,8 @@
     
     <title>归置组 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../" />
     <link rel="up" title="集群运维" href="../" />
     <link rel="next" title="归置组状态" href="../pg-states/" />
@@ -80,14 +80,14 @@
 <h2>归置组是如何使用的？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>存储池内的归置组（ PG ）把对象汇聚在一起，因为跟踪每一个对象的位置及其元数据需要大量计算——即一个拥有数百万对象的系统，不可能在对象这一级追踪位置。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-1fde157d24b63e3b465d96eb6afea22078c85a90.png"/>
+<img src="../../../images/ditaa-1fde157d24b63e3b465d96eb6afea22078c85a90.png"/>
 </p>
 <p>Ceph 客户端会计算某一对象应该位于哪个归置组里，它是这样实现的，先给对象 ID 做哈希操作，然后再根据指定存储池里的 PG 数量、存储池 ID 做一个运算。详情见 <a class="reference external" href="../../../architecture#mapping-pgs-to-osds">PG 映射到 OSD</a> 。</p>
 <p>The object&#8217;s contents within a placement group are stored in a set of
 OSDs. For instance, in a replicated pool of size two, each placement
 group will store objects on two OSDs, as shown below.</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-3c86866fb6edc99dad6ccf51e25e536806f0b079.png"/>
+<img src="../../../images/ditaa-3c86866fb6edc99dad6ccf51e25e536806f0b079.png"/>
 </p>
 <p>Should OSD #2 fail, another will be assigned to Placement Group #1 and
 will be filled with copies of all objects in OSD #1. If the pool size
@@ -320,7 +320,7 @@ would require significantly more resources and time for peering.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../">
-              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../">Table Of Contents</a></h3>
 <ul class="current">

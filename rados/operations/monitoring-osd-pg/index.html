@@ -9,8 +9,8 @@
     
     <title>监控 OSD 和归置组 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../" />
     <link rel="up" title="集群运维" href="../" />
     <link rel="next" title="用户管理" href="../user-management/" />
@@ -75,7 +75,7 @@
 <p class="last">如果一 OSD 状态为 <tt class="docutils literal"><span class="pre">down</span></tt> 且 <tt class="docutils literal"><span class="pre">in</span></tt> ，必定有问题，而且集群处于非健康状态。</p>
 </div>
 <p class="ditaa">
-<img src="../../../_images/ditaa-700a689bcec45906334cd28500d7f59aa579850a.png"/>
+<img src="../../../images/ditaa-700a689bcec45906334cd28500d7f59aa579850a.png"/>
 </p>
 <p>如果你执行过这些命令，如 <tt class="docutils literal"><span class="pre">ceph</span> <span class="pre">health</span></tt> 、 <tt class="docutils literal"><span class="pre">ceph</span> <span class="pre">-s</span></tt> 、或 <tt class="docutils literal"><span class="pre">ceph</span> <span class="pre">-w</span></tt> ，也许注意到了，集群并非一直返回 <tt class="docutils literal"><span class="pre">HEALTH</span> <span class="pre">OK</span></tt> ，别紧张。就 OSD 而言你应该明确，在一些情况下集群<strong>不会</strong>返回 <tt class="docutils literal"><span class="pre">HEALTH</span> <span class="pre">OK</span></tt> ：</p>
 <ol class="arabic simple">
@@ -137,7 +137,7 @@ dumped osdmap tree epoch 1
 <h2>节点互联<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>写入数据前，归置组必须处于 <tt class="docutils literal"><span class="pre">active</span></tt> 、而且<strong>应该</strong>是 <tt class="docutils literal"><span class="pre">clean</span></tt> 状态。假设一存储池的归置组有 3 个副本，为让 Ceph 确定归置组的当前状态，一归置组的主 OSD （即 acting set 内的第一个 OSD ）会与第二和第三 OSD 建立连接、并就归置组的当前状态达成一致意见。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-12ccbc36b952da92b4cb940ca78f39c63f498547.png"/>
+<img src="../../../images/ditaa-12ccbc36b952da92b4cb940ca78f39c63f498547.png"/>
 </p>
 <p>OSD 们也向监视器报告自己的状态，详情见<a class="reference external" href="../../configuration/mon-osd-interaction/">监视器与 OSD 交互的配置</a>。要排除连接建立问题，参见<a class="reference external" href="../../troubleshooting/troubleshooting-pg#failures-osd-peering">互联失败</a>。</p>
 </div>
@@ -294,7 +294,7 @@ dumped osdmap tree epoch 1
 <h3>存储池在建中<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>创建存储池时，它会创建指定数量的归置组。 Ceph 在创建一或多个归置组时会显示 <tt class="docutils literal"><span class="pre">creating</span></tt> ；创建完后，在其归置组的 Acting Set 里的 OSD 将建立互联；一旦互联完成，归置组状态应该变为 <tt class="docutils literal"><span class="pre">active+clean</span></tt> ，意思是 Ceph 客户端可以向归置组写入数据了。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-48a884d47a318394a948f7e883a89c76115606bc.png"/>
+<img src="../../../images/ditaa-48a884d47a318394a948f7e883a89c76115606bc.png"/>
 </p>
 </div>
 <div class="section" id="id6">
@@ -398,7 +398,7 @@ ceph osd map data test-object-1</pre>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../">
-              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../">Table Of Contents</a></h3>
 <ul class="current">

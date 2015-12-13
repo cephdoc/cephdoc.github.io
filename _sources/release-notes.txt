@@ -6242,7 +6242,7 @@ Notable Changes
 * osd: tests for objectstore backends (Haomai Wang)
 * osd: various refactoring and bug fixes (Samuel Just, David Zafman)
 * rados: add 'set-alloc-hint' command (Ilya Dryomov)
-* rbd-fuse: fix enumerate_images overflow, memory leak (Ilya Dryomov)
+* rbd-fuse: fix enumerateimages overflow, memory leak (Ilya Dryomov)
 * rbdmap: fix upstart script (Stephan Renatus)
 * rgw: avoid logging system events to usage log (Yehuda Sadeh)
 * rgw: fix Swift range reponse (Yehuda Sadeh)

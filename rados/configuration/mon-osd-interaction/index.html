@@ -9,8 +9,8 @@
     
     <title>监视器与 OSD 交互的配置 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../" />
     <link rel="up" title="配置" href="../" />
     <link rel="next" title="OSD 配置参考" href="../osd-config-ref/" />
@@ -68,28 +68,28 @@
 <span id="id1"></span><h2>OSD 验证心跳<a class="headerlink" href="#index-1" title="Permalink to this headline">¶</a></h2>
 <p>各 OSD 每 6 秒会与其他 OSD 进行心跳检查，用 <tt class="docutils literal"><span class="pre">[osd]</span></tt> 下的 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">heartbeat</span> <span class="pre">interval</span></tt> 可更改此间隔、或运行时更改。如果一个 OSD 20 秒都没有心跳，集群就认为它 <tt class="docutils literal"><span class="pre">down</span></tt> 了，用 <tt class="docutils literal"><span class="pre">[osd]</span></tt> 下的 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">heartbeat</span> <span class="pre">grace</span></tt> 可更改宽限期、或者运行时更改。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-2ad4d285aa0fb0ed30f32eb7137638c5d045f92a.png"/>
+<img src="../../../images/ditaa-2ad4d285aa0fb0ed30f32eb7137638c5d045f92a.png"/>
 </p>
 </div>
 <div class="section" id="osd-osd">
 <span id="index-2"></span><h2>OSD 报告死亡 OSD<a class="headerlink" href="#osd-osd" title="Permalink to this headline">¶</a></h2>
 <p>默认情况下，一个 OSD 必须向监视器报告三次另一个 OSD <tt class="docutils literal"><span class="pre">down</span></tt> 的消息，监视器才会认为那个被报告的 OSD <tt class="docutils literal"><span class="pre">down</span></tt> 了；配置文件里 <tt class="docutils literal"><span class="pre">[mon]</span></tt> 段下的 <tt class="docutils literal"><span class="pre">mon</span> <span class="pre">osd</span> <span class="pre">min</span> <span class="pre">down</span> <span class="pre">reports</span></tt> 选项（ v0.62 之前是 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">min</span> <span class="pre">down</span> <span class="pre">reports</span></tt> ）可更改这个最少 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">down</span></tt> 消息次数，或者运行时设置。默认情况下，只要有一个 OSD 报告另一个 OSD 挂的消息即可，配置文件里 <tt class="docutils literal"><span class="pre">[mon]</span></tt> 段下的 <tt class="docutils literal"><span class="pre">mon</span> <span class="pre">osd</span> <span class="pre">min</span> <span class="pre">down</span> <span class="pre">reporters</span></tt> 可用来更改必需 OSD 数（ v0.62 之前的 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">min</span> <span class="pre">down</span> <span class="pre">reporters</span></tt> ），或者运行时更改。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-fc32f1b02bd093322c25ed98ece57772920f0a68.png"/>
+<img src="../../../images/ditaa-fc32f1b02bd093322c25ed98ece57772920f0a68.png"/>
 </p>
 </div>
 <div class="section" id="index-3">
 <span id="id2"></span><h2>OSD 报告互联失败<a class="headerlink" href="#index-3" title="Permalink to this headline">¶</a></h2>
 <p>如果一 OSD 守护进程不能和配置文件中定义的任何 OSD 建立连接，它会每 30 秒向监视器索要一次最新集群运行图，你可以在 <tt class="docutils literal"><span class="pre">[osd]</span></tt> 下设置 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">mon</span> <span class="pre">heartbeat</span> <span class="pre">interval</span></tt> 来更改这个心跳间隔，或者运行时更改。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-db160722d860663ebdb46d66903688b0ee5ab1a8.png"/>
+<img src="../../../images/ditaa-db160722d860663ebdb46d66903688b0ee5ab1a8.png"/>
 </p>
 </div>
 <div class="section" id="index-4">
 <span id="id3"></span><h2>OSD 报告自己的状态<a class="headerlink" href="#index-4" title="Permalink to this headline">¶</a></h2>
 <p>如果一 OSD 在 <tt class="docutils literal"><span class="pre">mon</span> <span class="pre">osd</span> <span class="pre">report</span> <span class="pre">timeout</span></tt> 时间内没向监视器报告过，监视器就认为它 <tt class="docutils literal"><span class="pre">down</span></tt> 了。在 OSD 守护进程会向监视器报告某些事件，如某次操作失败、归置组状态变更、 <tt class="docutils literal"><span class="pre">up_thru</span></tt> 变更、或它将在 5 秒内启动。你可以设置 <tt class="docutils literal"><span class="pre">[osd]</span></tt> 下的 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">mon</span> <span class="pre">report</span> <span class="pre">interval</span> <span class="pre">min</span></tt> 来更改最小报告间隔，或在运行时更改。 OSD 守护进程每 120 秒会向监视器报告其状态，不论是否有值得报告的事件。在 <tt class="docutils literal"><span class="pre">[osd]</span></tt> 段下设置 <tt class="docutils literal"><span class="pre">osd</span> <span class="pre">mon</span> <span class="pre">report</span> <span class="pre">interval</span> <span class="pre">max</span></tt> 可更改OSD报告间隔，或运行时更改。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-58a05b0a2682b211eef3e3e7f5c047fcac0e1f3f.png"/>
+<img src="../../../images/ditaa-58a05b0a2682b211eef3e3e7f5c047fcac0e1f3f.png"/>
 </p>
 </div>
 <div class="section" id="id4">
@@ -386,7 +386,7 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../">
-              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../">Table Of Contents</a></h3>
 <ul class="current">

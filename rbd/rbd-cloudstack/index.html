@@ -9,8 +9,8 @@
     
     <title>块设备与 CloudStack &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="up" title="Ceph 块设备" href="../rbd/" />
     <link rel="next" title="rbd – 管理 RADOS 块设备（ RBD ）映像" href="../../man/8/rbd/" />
@@ -63,7 +63,7 @@
 <p>CloudStack 4.0 及以上版本可以通过 <tt class="docutils literal"><span class="pre">libvirt</span></tt> 使用 Ceph 块设备， <tt class="docutils literal"><span class="pre">libvirt</span></tt> 会配置 QEMU 与 <tt class="docutils literal"><span class="pre">librbd</span></tt> 交互。 Ceph 会把块设备映像条带化为对象并分布到整个集群，这意味着大个的 Ceph 块设备性能会优于单体服务器。</p>
 <p>要让 CloudStack 4.0 及更高版使用 Ceph 块设备，你得先安装 QEMU 、 <tt class="docutils literal"><span class="pre">libvirt</span></tt> 、和 CloudStack 。我们建议在另外一台物理服务器上安装 CloudStack ，此软件最低需要 4GB 内存和一个双核 CPU ，但是资源越多越好。下图描述了 CloudStack/Ceph 技术栈。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-e63e9147b3001c38898bd0c1e7f972244eabc5c1.png"/>
+<img src="../../images/ditaa-e63e9147b3001c38898bd0c1e7f972244eabc5c1.png"/>
 </p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -149,7 +149,7 @@ Primary Storage.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

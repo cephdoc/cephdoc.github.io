@@ -9,8 +9,8 @@
     
     <title>手动部署 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="up" title="安装（手动）" href="../" />
     <link rel="next" title="升级 Ceph" href="../upgrading-ceph/" />
@@ -63,7 +63,7 @@
 <p>所有 Ceph 集群都需要至少一个监视器、且 OSD 数量不小于副本数。自举引导初始监视器是部署 Ceph 存储集群的第一步，监视器的部署也为整个集群奠定了重要框架，如存储池副本数、每个 OSD 拥有的归置组数量、心跳周期、是否需认证等，其中大多数选项都有默认值，但是建设生产集群时仍需要您熟知它们。</p>
 <p>按照<a class="reference external" href="../../start">安装（快速）</a>里的相同配置，我们能配置起监视器为 <tt class="docutils literal"><span class="pre">node1</span></tt> ， OSD 节点为 <tt class="docutils literal"><span class="pre">node2</span></tt> 、 <tt class="docutils literal"><span class="pre">node3</span></tt> 的集群。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-b67d58275cae03a5573d36907b437e36df685600.png"/>
+<img src="../../images/ditaa-b67d58275cae03a5573d36907b437e36df685600.png"/>
 </p>
 <div class="section" id="id2">
 <h2>监视器的自举引导<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -383,7 +383,7 @@ sudo touch /var/lib/ceph/osd/ceph-1/sysvinit</pre>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

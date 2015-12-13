@@ -9,8 +9,8 @@
     
     <title>联盟网关的配置 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="up" title="Ceph 对象网关" href="../" />
     <link rel="next" title="Ceph 对象网关配置参考" href="../config-ref/" />
@@ -617,7 +617,7 @@ radosgw-admin zone set --rgw-zone=eu-west --infile eu-west.json --name client.ra
 <div class="section" id="id19">
 <h2>多站点数据复制<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
 <p>数据同步代理会把主域数据复制到二级域。一个 region 的主域会自动选择某 region 的二级域，并作为它的数据源。</p>
-<img alt="../../_images/zone-sync.png" src="../../_images/zone-sync.png" />
+<img alt="../../images/zone-sync.png" src="../../images/zone-sync.png" />
 <p>配置同步代理需找出源和目的地的访问密钥、私钥、以及目的 URL 和端口。</p>
 <p>你可以用 <tt class="docutils literal"><span class="pre">radosgw-admin</span> <span class="pre">zone</span> <span class="pre">list</span></tt> 获取域名称列表，用 <tt class="docutils literal"><span class="pre">radosgw-admin</span> <span class="pre">zone</span> <span class="pre">get</span></tt> 找出此域的访问密钥和私钥。端口号可以在<a class="reference internal" href="#id8">创建网关配置</a>时创建的网关配置文件里找到。</p>
 <p>一例程只需准备主机名和端口号即可（假设一 region 或域内的所有网关例程都访问同一 Ceph 存储集群）；配置文件（如 <tt class="docutils literal"><span class="pre">cluster-data-sync.conf</span></tt> ）里的以下这些选项要填上，还要给 <tt class="docutils literal"><span class="pre">log_file</span></tt> 指定一个日志文件。</p>
@@ -660,7 +660,7 @@ INFO:radosgw_agent.sync:2/64 shards processed
 <div class="section" id="id20">
 <h2>region 间元数据复制<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <p>数据同步代理会把主 region 内主域的元数据复制到二级 region 的主域。元数据包含网关用户和桶信息、但不包含桶内的对象——为确保跨集群统一的命名空间，主 region 内的主域是数据源，它会自动选择二级 region 的主域。</p>
-<img alt="../../_images/region-sync.png" class="align-center" src="../../_images/region-sync.png" />
+<img alt="../../images/region-sync.png" class="align-center" src="../../images/region-sync.png" />
 <p>按照与<a class="reference internal" href="#id19">多站点数据复制</a>相同的步骤，并把主 region 的主域作为源域、二级 region 的主域作为二级域。启动 <tt class="docutils literal"><span class="pre">radosgw-agent</span></tt> 时加上 <tt class="docutils literal"><span class="pre">--metadata-only</span></tt> 参数，这样它就只会复制元数据。例如：</p>
 <div class="highlight-python"><pre>radosgw-agent -c inter-region-data-sync.conf --metadata-only</pre>
 </div>
@@ -675,7 +675,7 @@ INFO:radosgw_agent.sync:2/64 shards processed
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

@@ -9,8 +9,8 @@
     
     <title>Monitoring OSDs and PGs &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../../" />
     <script type="text/javascript" src="http://ayni.ceph.com/public/js/ceph.js"></script>
 
@@ -81,7 +81,7 @@ not assign placement groups to the OSD. If an OSD is <tt class="docutils literal
 will not be in a healthy state.</p>
 </div>
 <p class="ditaa">
-<img src="../../../../_images/ditaa-700a689bcec45906334cd28500d7f59aa579850a.png"/>
+<img src="../../../../images/ditaa-700a689bcec45906334cd28500d7f59aa579850a.png"/>
 </p>
 <p>If you execute a command such as <tt class="docutils literal"><span class="pre">ceph</span> <span class="pre">health</span></tt>, <tt class="docutils literal"><span class="pre">ceph</span> <span class="pre">-s</span></tt> or <tt class="docutils literal"><span class="pre">ceph</span> <span class="pre">-w</span></tt>,
 you may notice that the cluster does not always echo back <tt class="docutils literal"><span class="pre">HEALTH</span> <span class="pre">OK</span></tt>. Don&#8217;t
@@ -184,7 +184,7 @@ current state of a placement group, the primary OSD of the placement group
 OSDs to establish agreement on the current state of the placement group
 (assuming a pool with 3 replicas of the PG).</p>
 <p class="ditaa">
-<img src="../../../../_images/ditaa-12ccbc36b952da92b4cb940ca78f39c63f498547.png"/>
+<img src="../../../../images/ditaa-12ccbc36b952da92b4cb940ca78f39c63f498547.png"/>
 </p>
 <p>The OSDs also report their status to the monitor. See <a class="reference external" href="../../configuration/mon-osd-interaction/">Configuring Monitor/OSD
 Interaction</a> for details. To troubleshoot peering issues, see <a class="reference external" href="../../troubleshooting/troubleshooting-pg#failures-osd-peering">Peering
@@ -369,7 +369,7 @@ group&#8217;s Acting Set will peer. Once peering is complete, the placement grou
 status should be <tt class="docutils literal"><span class="pre">active+clean</span></tt>, which means a Ceph client can begin writing
 to the placement group.</p>
 <p class="ditaa">
-<img src="../../../../_images/ditaa-48a884d47a318394a948f7e883a89c76115606bc.png"/>
+<img src="../../../../images/ditaa-48a884d47a318394a948f7e883a89c76115606bc.png"/>
 </p>
 </div>
 <div class="section" id="id1">
@@ -573,7 +573,7 @@ the migration manually. See the  <a class="reference external" href="../../../ar
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../../">
-              <img class="logo" src="../../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../../">Table Of Contents</a></h3>
 <ul>

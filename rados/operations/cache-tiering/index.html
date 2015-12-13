@@ -9,8 +9,8 @@
     
     <title>分级缓存 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../" />
     <link rel="up" title="集群运维" href="../" />
     <link rel="next" title="归置组" href="../placement-groups/" />
@@ -63,7 +63,7 @@
 <h1>分级缓存<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>分级缓存可提升后端存储内某些（热点）数据的 I/O 性能。分级缓存需创建一个由高速而昂贵存储设备（如 SSD ）组成的存储池、作为缓存层，以及一个相对低速/廉价设备组成的后端存储池（或纠删码编码的）、作为经济存储层。 Ceph 的对象处理器决定往哪里存储对象，分级代理决定何时把缓存内的对象刷回后端存储层；所以缓存层和后端存储层对 Ceph 客户端来说是完全透明的。</p>
 <p class="ditaa">
-<img src="../../../_images/ditaa-2982c5ed3031cac4f9e40545139e51fdb0b33897.png"/>
+<img src="../../../images/ditaa-2982c5ed3031cac4f9e40545139e51fdb0b33897.png"/>
 </p>
 <p>缓存层代理自动处理缓存层和后端存储之间的数据迁移。然而，管理员仍可干预此迁移规则，主要有两种场景：</p>
 <ul class="simple">
@@ -274,7 +274,7 @@ ceph osd pool set {cachepool} min_write_recency_for_promote 1</pre>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../">
-              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../">Table Of Contents</a></h3>
 <ul class="current">

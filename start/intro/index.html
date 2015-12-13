@@ -9,8 +9,8 @@
     
     <title>Ceph 简介 &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../" />
     <link rel="next" title="硬件推荐" href="../hardware-recommendations/" />
     <link rel="prev" title="欢迎来到 Ceph 世界" href="../../" />
@@ -60,7 +60,7 @@
 <h1>Ceph 简介<a class="headerlink" href="#ceph" title="Permalink to this headline">¶</a></h1>
 <p>不管你是否想为<a class="reference internal" href="../../glossary/#term-48"><em class="xref std std-term">云平台</em></a>提供 <a class="reference internal" href="../../glossary/#term-30"><em class="xref std std-term">Ceph 对象存储</em></a>和/或 <a class="reference internal" href="../../glossary/#term-38"><em class="xref std std-term">Ceph 块设备</em></a>，你都应该部署一个 <a class="reference internal" href="../../glossary/#term-45"><em class="xref std std-term">Ceph 文件系统</em></a>，以备不时之需；所有 <a class="reference internal" href="../../glossary/#term-21"><em class="xref std std-term">Ceph 存储集群</em></a>的部署都始于各 <a class="reference internal" href="../../glossary/#term-13"><em class="xref std std-term">Ceph 节点</em></a>、网络和 Ceph 存储集群。最简的 Ceph 存储集群至少要一个监视器和两个 OSD 守护进程，只有运营 Ceph 文件系统时元数据服务器才是必需的。</p>
 <p class="ditaa">
-<img src="../../_images/ditaa-fbe8ee62a8a21a317df92d84a62447c4ecd11e34.png"/>
+<img src="../../images/ditaa-fbe8ee62a8a21a317df92d84a62447c4ecd11e34.png"/>
 </p>
 <ul class="simple">
 <li><strong>Ceph OSDs</strong>: <a class="reference internal" href="../../glossary/#term-55"><em class="xref std std-term">Ceph 对象存储守护进程</em></a>(Ceph OSD)的功能是存储数据，处理数据复制、恢复、回填、重均衡，并向监视器提供邻居的心跳信息。一个 Ceph 存储集群自动复制两份数据时，至少需要两个 OSD 守护进程才能达到 <tt class="docutils literal"><span class="pre">active+clean</span></tt> 状态（ Ceph 默认复制三份，此值可调）。</li>
@@ -110,7 +110,7 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../">
-              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../">Table Of Contents</a></h3>
 <ul class="current">

@@ -9,8 +9,8 @@
     
     <title>Configuring Federated Gateways &mdash; Ceph Documentation</title>
     
-    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script type="text/javascript" src="../../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../static/favicon.ico"/>
     <link rel="top" title="Ceph Documentation" href="../../../" />
     <script type="text/javascript" src="http://ayni.ceph.com/public/js/ceph.js"></script>
 
@@ -757,7 +757,7 @@ radosgw-admin zone set --rgw-zone=eu-west --infile eu-west.json --name client.ra
 <p>The data synchronization agent replicates the data of a master zone to a
 secondary zone. The master zone of a region is the source for the secondary zone
 of the region and it gets selected automatically.</p>
-<img alt="../../../_images/zone-sync1.png" src="../../../_images/zone-sync1.png" />
+<img alt="../../../images/zone-sync1.png" src="../../../images/zone-sync1.png" />
 <p>To configure the synchronization agent, retrieve the access key and secret for
 the source and destination, and the destination URL and port.</p>
 <p>You may use <tt class="docutils literal"><span class="pre">radosgw-admin</span> <span class="pre">zone</span> <span class="pre">list</span></tt> to get a list of zone names. You
@@ -814,7 +814,7 @@ gateway users and buckets, but not the objects within the buckets&#8211;ensuring
 unified namespace across the cluster. The master zone of the master region is
 the source for the master zone of the secondary region and it gets selected
 automatically.</p>
-<img alt="../../../_images/region-sync1.png" class="align-center" src="../../../_images/region-sync1.png" />
+<img alt="../../../images/region-sync1.png" class="align-center" src="../../../images/region-sync1.png" />
 <p>Follow the same steps in <a class="reference internal" href="#multi-site-data-replication">Multi-Site Data Replication</a> by specifying the master
 zone of the master region as the source zone and the master zone of the
 secondary region as the secondary zone. When activating the <tt class="docutils literal"><span class="pre">radosgw-agent</span></tt>,
@@ -834,7 +834,7 @@ there is a unified namespace between the two regions.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../../../">
-              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+              <img class="logo" src="../../../static/logo.png" alt="Logo"/>
             </a></p>
 <h3><a href="../../../">Table Of Contents</a></h3>
 <ul>
